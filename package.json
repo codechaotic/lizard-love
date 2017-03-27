@@ -1,0 +1,14 @@
+{
+  "name": "lizard-love",
+  "version": "0.1.0",
+  "description": "Lizard Love App",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "author": "Asa Jones <thinkinfractals@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0"
+  }
+}
