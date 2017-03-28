@@ -1,3 +1,6 @@
 module.exports = async (ctx) => {
-  ctx.body = 'Random';
+  ctx.body = {
+    id: 0,
+    body: "Random Message"
+  };
 };
