@@ -7,7 +7,7 @@ const ENV = process.env.ENV = process.env.ENV || 'development';
 var app = new Koa();
 var router = new Router();
 
-router.get('/random', require('./lib/random'));
+router.get('/random-message', require('./lib/random-message'));
 
 app.use(async (ctx, next) => {
   try {
