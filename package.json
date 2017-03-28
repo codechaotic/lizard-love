@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Lizard Love KoaJS Back-End",
   "scripts": {
+    "lint": "eslint .",
     "start": "node src/app.js"
   },
   "author": "Asa Jones <thinkinfractals@gmail.com>",
@@ -14,5 +15,8 @@
   },
   "engines": {
     "node": ">=7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0"
   }
 }
