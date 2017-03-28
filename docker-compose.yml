@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    build: .
+    image: codechaotic/lizard-love:dev
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 127.0.0.1:3333:3000
