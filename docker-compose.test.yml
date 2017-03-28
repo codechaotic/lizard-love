@@ -2,4 +2,4 @@ version: '2'
 services:
   sut:
     build: .
-    command: npm install && npm test
+    command: /bin/bash -c "npm install && npm test"
