@@ -26,7 +26,7 @@ app.use(async (ctx, next) => {
 });
 
 app.use(body());
-app.use(router.routes())
+app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.on('error', (error, ctx) => {
