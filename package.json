@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "description": "Lizard Love KoaJS Back-End",
   "scripts": {
+    "coverage": "istanbul cover _mocha -- --recursive src/**/*.spec.js && istanbul report html",
     "lint": "eslint .",
-    "start": "node src/app.js"
+    "mocha": "mocha --recursive src/**/*.spec.js",
+    "start": "node src/app.js",
+    "test": "npm run lint && npm run coverage"
   },
   "author": "Asa Jones <thinkinfractals@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -17,6 +20,11 @@
     "node": ">=7.0.0"
   },
   "devDependencies": {
-    "eslint": "^3.18.0"
+    "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0"
   }
 }
