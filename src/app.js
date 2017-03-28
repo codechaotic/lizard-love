@@ -1,15 +1,22 @@
-const koa = require('koa');
+const Koa = require('koa');
+const Router = require('koa-router');
 const body = require('koa-bodyparser');
 
 const ENV = process.env.ENV = process.env.ENV || 'development';
 
-var app = new koa();
+var app = new Koa();
+var router = new Router();
+
+router.get('/random', require('./lib/random'));
 
 app.use(async (ctx, next) => {
   try {
     await next();
-    ctx.body = 'Success';
-    ctx.status = 200;
+    ctx.set({
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': 0
+    });
   } catch (error) {
     if(ENV === 'development') ctx.status = 200;
     else ctx.status = error.status || 500;
@@ -17,6 +24,10 @@ app.use(async (ctx, next) => {
     ctx.app.emit('error', error, ctx);
   }
 });
+
+app.use(body());
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 app.on('error', (error, ctx) => {
   if(error.status) console.log(error.status, error.message);

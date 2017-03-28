@@ -1,14 +1,30 @@
 {
   "name": "lizard-love",
   "version": "0.1.0",
-  "description": "Lizard Love App",
+  "description": "Lizard Love KoaJS Back-End",
   "scripts": {
-    "start": "node src/app.js"
+    "coverage": "istanbul cover _mocha -- --recursive src/**/*.spec.js && istanbul report html",
+    "lint": "eslint .",
+    "mocha": "mocha --recursive src/**/*.spec.js",
+    "start": "node src/app.js",
+    "test": "npm run lint && npm run coverage"
   },
   "author": "Asa Jones <thinkinfractals@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
     "koa": "^2.2.0",
-    "koa-bodyparser": "^4.2.0"
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0"
+  },
+  "engines": {
+    "node": ">=7.0.0"
   }
 }

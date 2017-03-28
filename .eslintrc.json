@@ -1,0 +1,15 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "env": {
+      "node": true
+    }
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "brace-style": [1, "1tbs", {
+      "allowSingleLine": true
+    }]
+  }
+}
