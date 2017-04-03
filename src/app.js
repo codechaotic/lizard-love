@@ -1,8 +1,10 @@
 const Koa = require('koa');
 const Router = require('koa-router');
 const body = require('koa-bodyparser');
+const cors = require('kcors');
 
 const ENV = process.env.ENV = process.env.ENV || 'development';
+const ORIGIN = process.env.ORIGIN || '*';
 
 var app = new Koa();
 var router = new Router();
@@ -24,6 +26,9 @@ app.use(async (ctx, next) => {
     ctx.app.emit('error', error, ctx);
   }
 });
+app.use(cors({
+  origin: ORIGIN
+}));
 
 app.use(body());
 app.use(router.routes());
