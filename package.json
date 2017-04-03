@@ -1,6 +1,6 @@
 {
   "name": "lizard-love",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lizard Love KoaJS Back-End",
   "scripts": {
     "coverage": "istanbul cover _mocha -- --recursive src/**/*.spec.js && istanbul report html",
