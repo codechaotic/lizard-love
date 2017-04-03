@@ -12,6 +12,7 @@
   "author": "Asa Jones <thinkinfractals@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
+    "kcors": "^2.2.1",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.0.1"
